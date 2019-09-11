@@ -6,3 +6,5 @@
 
 [Command practicing][https://github.com/FilaCZ/git-lesson-repository]
 
+[Webside publish][https://github.com/FilaCZ/FilaCZ.github.io]
+
