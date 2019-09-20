@@ -17,8 +17,19 @@ namespace DrawingApplication
             var canvas = this.Get<Canvas>("canvas");
             var foxDraw = new FoxDraw(canvas);
 
-            
+            double x = 0;
+            double y = 0;
+            double rectangleSize = 20;
 
+            for (int i = 0; i < 5; i++)
+            {
+                foxDraw.SetFillColor(Colors.Purple);
+                foxDraw.DrawRectangle(x, y, rectangleSize, rectangleSize);
+                x += rectangleSize;
+                y += rectangleSize;
+                rectangleSize *= 2;
+
+            }
 
         }
 
