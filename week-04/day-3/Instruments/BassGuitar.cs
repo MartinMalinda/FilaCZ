@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Instruments
 {
-    class BassGuitar
+    class BassGuitar : StringedInstruments
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModelStringedInstruments
+namespace Instruments
 {
     public abstract class Instruments
     {

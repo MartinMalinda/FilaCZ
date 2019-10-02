@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModelStringedInstruments
+namespace Instruments
 {
-    abstract class StringedInstruments : Instruments
+    public abstract class StringedInstruments : Instruments
     {
         public int NumOfStrings { get; set; }
 
