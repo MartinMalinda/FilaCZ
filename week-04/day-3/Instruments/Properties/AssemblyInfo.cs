@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Obecné informace o sestavení se řídí přes následující 
 // sadu atributů. Změnou hodnot těchto atributů se upraví informace
 // přidružené k sestavení.
-[assembly: AssemblyTitle("ModelStringedInstruments")]
+[assembly: AssemblyTitle("Instruments")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ModelStringedInstruments")]
+[assembly: AssemblyProduct("Instruments")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Následující GUID se používá pro ID knihovny typů, pokud je tento projekt vystavený pro COM.
-[assembly: Guid("2dc15c48-0452-4f24-b29d-b5eabcd3ff2c")]
+[assembly: Guid("301ff206-cd94-4689-b2e0-56b6bf664230")]
 
 // Informace o verzi sestavení se skládá z těchto čtyř hodnot:
 //

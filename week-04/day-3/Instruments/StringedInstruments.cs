@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace ModelStringedInstruments
 {
-    public abstract class StringedInstruments : Instruments
+    abstract class StringedInstruments : Instruments
     {
         public int NumOfStrings { get; set; }
 
-        public string Sound { get; set; }
 
-        public StringedInstruments(string name, int numOfStrings, string sound) : base(name)
+
+        public StringedInstruments(string name, int numOfStrings) : base(name)
         {
             this.NumOfStrings = numOfStrings;
-            this.Sound = sound;
+
         }
+
+        public abstract void Sound();
     }
 }

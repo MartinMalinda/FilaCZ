@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2DC15C48-0452-4F24-B29D-B5EABCD3FF2C}</ProjectGuid>
+    <ProjectGuid>{301FF206-CD94-4689-B2E0-56B6BF664230}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ModelStringedInstruments</RootNamespace>
-    <AssemblyName>ModelStringedInstruments</AssemblyName>
+    <RootNamespace>Instruments</RootNamespace>
+    <AssemblyName>Instruments</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,10 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BassGuitar.cs" />
+    <Compile Include="ElectricGuitar.cs" />
     <Compile Include="Instruments.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringedInstruments.cs" />
+    <Compile Include="Violin.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -8,9 +8,9 @@ namespace ModelStringedInstruments
 {
     public abstract class Instruments
     {
-        string Name { get; set; }
+        public string Name { get; set; }
 
-        public Instruments (string name)
+        public Instruments(string name)
         {
             this.Name = name;
         }
