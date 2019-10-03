@@ -11,10 +11,25 @@ namespace Anagram
         static void Main(string[] args)
         {
         }
-        public bool IsAnagram(string wordOne, string wordTwo);
+        public bool IsAnagram(string wordOne, string wordTwo)
         {
-            string wordOne = "";
+
             char[] wordOneArray = wordOne.ToCharArray();
+            char[] wordTwoArray = wordTwo.ToCharArray();
+            List<char> wordOneList = wordOneArray.ToList();
+            List<char> wordTwoList = wordTwoArray.ToList();
+
+            for (int i = 0; i < wordOneArray.Count(); i++)
+            {
+                if (wordOneArray[i] == wordTwoArray[i])
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
     }
 }
