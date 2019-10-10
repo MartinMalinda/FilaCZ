@@ -8,19 +8,29 @@ namespace Pirates
 {
     class Pirate
     {
+        public string Name { get; private set; }
+        public int DrinksTaken { get; private set; }
+        public bool IsNotDead { get; private set; }
 
-        public int DrinksTaken { get; private set; } = 0;
-        public bool isNotDead { get; private set; } = true;
+        public bool IsCaptain { get; private set; }
 
-        public Pirate()
+        public Pirate(string name, bool isCaptain = false)
         {
-            DrinksTaken = DrinksTaken;
+            Name = name;
+            DrinksTaken = 0;
+            IsNotDead = true;
+            IsCaptain = isCaptain;
         }
 
         public void DrinkSomeRum()
         {
-            if (isNotDead)
+            if (IsNotDead)
             {
+                if (IsCaptain)
+                {
+                    DrinksTaken += 3;
+                }
+                else
                 DrinksTaken++;
             }
             else
@@ -29,11 +39,11 @@ namespace Pirates
 
         public void HowsItGoingMate()
         {
-            if (DrinksTaken <= 4 && isNotDead)
+            if (DrinksTaken <= 4 && IsNotDead)
             {
                 Console.WriteLine("Pour me anudder!");
             }
-            else if (!isNotDead)
+            else if (!IsNotDead)
             {
                 Console.WriteLine("...dead...");
             }
@@ -44,24 +54,37 @@ namespace Pirates
             }
         }
 
-        public void Brawl(Pirate pirateOne, Pirate pirateTwo)
+        public void Brawl(Pirate pirateTwo)
         {
             Random random = new Random();
             int chance = random.Next(1, 4);
 
-            if (!pirateTwo.isNotDead)
+            if (!pirateTwo.IsNotDead)
             {
                 Console.WriteLine("Can't fight dead pirate.");
                 return;  
             }
 
-
+            switch (chance)
+            {
+                case 1:
+                    this.Die();
+                    Console.WriteLine($"{Name} is dead.");
+                    break;
+                case 2:
+                    pirateTwo.Die();
+                    Console.WriteLine($"{pirateTwo.Name} is dead.");
+                    break;
+                case 3:
+                    Console.WriteLine("Both pirates passed out.");
+                    break;
+            }
 
         }
 
         public bool Die()
         {
-            return isNotDead = false;
+            return IsNotDead = false;
         }
 
     }

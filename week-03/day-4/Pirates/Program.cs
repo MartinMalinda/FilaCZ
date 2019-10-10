@@ -10,23 +10,42 @@ namespace Pirates
     {
         static void Main(string[] args)
         {
-            Pirate jack = new Pirate();
+            Pirate pirateJack = new Pirate("Jack", true);
 
-            jack.DrinkSomeRum();
-            jack.DrinkSomeRum();
-            jack.DrinkSomeRum();
-            jack.DrinkSomeRum();
-            jack.DrinkSomeRum();
+            Pirate pirateBlackBeard = new Pirate("Black Beard");
 
-            jack.HowsItGoingMate();
+            /*pirateJack.DrinkSomeRum();
+            pirateJack.DrinkSomeRum();
+            pirateJack.DrinkSomeRum();
+            pirateJack.DrinkSomeRum();
+            pirateJack.DrinkSomeRum();
 
-            jack.HowsItGoingMate();
+            pirateJack.HowsItGoingMate();
+            pirateJack.HowsItGoingMate();
+            pirateJack.Die();
+            pirateJack.DrinkSomeRum();
+            pirateJack.HowsItGoingMate();*/
 
-            jack.Die();
+            pirateJack.Brawl(pirateBlackBeard);
 
-            jack.DrinkSomeRum();
+            /*Pirate.Brawl(pirateJack, pirateBlackBeard);*/
 
-            jack.HowsItGoingMate();
+            Ship blackPearl = new Ship("Black Pearl");
+
+            blackPearl.FillShip();
+
+            foreach (var pirate in blackPearl.Pirates)
+            {
+                Console.WriteLine(pirate.Name);
+            }
+
+            foreach (var pirate in blackPearl.Pirates)
+            {
+                pirate.DrinkSomeRum();
+                pirate.HowsItGoingMate();
+            }
+
+            Console.WriteLine(blackPearl.ToString());
 
 
             Console.ReadKey();
