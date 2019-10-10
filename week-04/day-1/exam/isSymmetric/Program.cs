@@ -10,36 +10,32 @@ namespace isSymmetric
     {
         static void Main(string[] args)
         {
-
-            int[,] array = new int[3, 3];
-
-            IsSymmetric(array, 3, 3);
-
-
-            Console.ReadLine();
-
-        }
-
-        public static void IsSymmetric(int[,] newArray, int x, int y)
-        {
-            int[,] array = new int[x, y];
-
-            for (int row = 0; row < array.Length / x; row++)
-            {
-
-                for (int column = 0; column < array.Length / y; column++)
+            int[,] array =
                 {
-                    bool sameCoordinates = row == column;
-                    if (sameCoordinates)
-                    {
-                        array[row, column] = 1;
-                    }
-                    Console.Write(array[row, column]);
-                    Console.Write(" ");
+                    { 1, 2, 3},
+                    { 2, 3, 2},
+                    { 3, 2, 1}
+                };
 
-                }
-                Console.Write("\n");
-            }
+            Console.WriteLine(IsSymetric(array));
+
+            Console.ReadKey();
+
         }
+
+        public static bool IsSymetric(int[,] array)
+        {
+
+                for (int y = 0; y < array.GetLength(0); y++)
+                {
+                    if (array[0, y] != array[y, 0] || array[y, array.GetLength(0) - 1] != array[array.GetLength(0) - 1, y])
+                    {
+                        return false;
+                    }
+                }
+            
+            return true;
+        }
+
     }
 }

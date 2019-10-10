@@ -12,58 +12,41 @@ namespace MostCommonChars
         static void Main(string[] args)
         {
 
-            //string fileName = "countchar.txt";
             string path = @"./countchar.txt";
 
-            //string path = $"./{fileName}";
-            string countcharFile = File.ReadAllText(path.Trim());
-            char[] charsInFile = countcharFile.ToCharArray();
+            string text = File.ReadAllText(path);
 
 
-            for (int i = 0; i < countcharFile.ToCharArray().Length; i++)
+            Dictionary<char, int> charsAmount = new Dictionary<char, int>();
+            int counter = 0;
+            foreach (char character in text)
             {
-
-                Console.Write(charsInFile[i]);
-            }
-
-            foreach (char charInString in countcharFile)
-            {
-
-            }
-
-
-            var count = countcharFile.Count(x => x == 'e'); // copy paste for inspiration reasons .. 
-            Console.WriteLine(count);
-
-
-            Console.ReadLine();
-
-
-        //}
-
-        /*public static int CountChars(string fileName)
-        {
-            string path = $"./{fileName}";
-            string countcharFile = File.ReadAllText(path);
-            char[] charsInFile = countcharFile.ToCharArray();
-
-            int count = 0;
-
-            for (int i = 0; i < countcharFile.ToCharArray().Length; i++)
-            {
-
-                for (int k = 0; k < countcharFile.ToCharArray().Length; k++)
+                if (!charsAmount.ContainsKey(character))
                 {
-                    if (countcharFile.ToCharArray()[i] == countcharFile.ToCharArray()[k])
-                    {
-                        count++;
-                    }
-                    Console.WriteLine($"{countcharFile.ToCharArray()[i]} : {count}");
+                    charsAmount.Add(character, 1);
                 }
+                else
+                    charsAmount[character]++;
+            }
 
-                
-            }*/
+            var values = charsAmount.Values.ToList();
 
+            values.Sort();
+            values.Reverse();
+     
+
+            for (int i = 0; i < 2; i++)
+            {
+                foreach (var item in charsAmount)
+                {
+                    if (item.Value == values[i])
+                    {
+                        Console.WriteLine($"{item.Key} : {item.Value}");
+                    }
+                }
+            }
+
+            Console.ReadKey();
 
         }
     }
