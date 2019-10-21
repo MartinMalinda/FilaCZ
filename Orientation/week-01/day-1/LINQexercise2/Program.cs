@@ -14,11 +14,11 @@ namespace LINQexercise2
 
             var oddNumsAverageMethod = numbers.Where(n => n % 2 == 1 || n % 2 == -1).Average();
 
-            var oddNumsAverage = (from number in numbers
-                          where number % 2 == 1 || number % 2 == -1
-                                  select number).Average();
+            var oddNumsAverage = from number in numbers
+                                 where number % 2 == 1 || number % 2 == -1
+                                 select number;
 
-            Console.WriteLine(oddNumsAverage);
+            Console.WriteLine(oddNumsAverage.Average());
         }
     }
 }
