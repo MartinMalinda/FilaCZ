@@ -1,0 +1,35 @@
+﻿body {
+    background-color: ghostwhite;
+}
+
+.header {
+    font-size: 30px;
+    color: deepskyblue;
+}
+
+hr {
+    border: 1px solid deepskyblue; 
+    background-color: deepskyblue;   
+}
+
+a {
+    margin-right: 25px;
+    font-size: 20px;
+    text-decoration: none;
+    color: deepskyblue;
+    
+}
+
+a:hover{
+    color: black;
+}
+
+
+
+button{
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 25px;
+}
+

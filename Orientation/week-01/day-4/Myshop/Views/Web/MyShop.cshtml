@@ -1,0 +1,59 @@
+﻿@using Myshop.Models;
+@using Myshop.Controllers;
+
+
+@model List<ShopItem>
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MyShop</title>
+    <link href="~/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="header">
+        My Shop
+        </div>
+        <hr />
+        <div class="navbar">
+            <nav>
+                <a href="onlyAvailabel.asp"> Only Available </a>
+                <a href="cheapFirst.asp"> Cheap First </a>
+                <a href="containsNike.asp"> Contains Nike </a>
+                <a href="averageStock.asp"> Average Stock </a>
+                <a href="mostExpensiveAvailable.asp"> Most Expensive Available </a>
+            </nav>
+        </div>
+    </header>
+
+    <label for="search">Search for:</label>
+
+    <form class="search-box">
+        <input class="search-txt" type="text" name="" placeholder="Type to search" id="search">
+        <button type="button">Search</button>
+    </form>
+
+    <div >
+        <table>
+            <tr class="table">
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity of stock</th>
+            </tr>
+            @foreach (ShopItem item in Model)
+            {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Price</td>
+                <td>@item.StockQuantity</td>
+            </tr>
+            }   
+        </table>
+    </div>
+</body>
+</html>
