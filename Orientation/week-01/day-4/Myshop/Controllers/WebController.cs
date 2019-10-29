@@ -19,12 +19,12 @@ namespace Myshop.Controllers
             return View(itemsList);
         }
 
-        /*[HttpGet("myshop")]
-        public IActionResult NavBarItems()
+        [HttpGet("")]
+        public IActionResult AverageStock()
         {
-
-            ViewData["header"] = "My Shop";
-            return View("MyShop.cshtml");
-        }*/
+            List<ShopItem> itemsList = ListOfItems.GetItems();
+            double averageStock = itemsList.Average(i => i.StockQuantity);
+            return View(averageStock);
+        }
     }
 }

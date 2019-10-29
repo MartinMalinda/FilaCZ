@@ -1,0 +1,8 @@
+﻿@using BankOfSimba.Models;
+
+@model List<BankAccount>
+
+@{string currency = "Zebra";}
+
+<h2>name: @Model[0].Name balance: @Model[0].Balance.ToString("0.00") @currency animal type: @Model[0].AnimalType</h2>
+

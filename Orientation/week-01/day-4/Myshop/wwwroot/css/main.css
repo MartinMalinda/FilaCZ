@@ -8,28 +8,28 @@
 }
 
 hr {
-    border: 1px solid deepskyblue; 
-    background-color: deepskyblue;   
+    border: 1px solid deepskyblue;
+    background-color: deepskyblue;
+}
+
+nav {
+    font-size: 20px;
 }
 
 a {
     margin-right: 25px;
-    font-size: 20px;
     text-decoration: none;
     color: deepskyblue;
-    
 }
 
-a:hover{
+
+a:hover {
     color: black;
 }
 
-
-
-button{
+button {
     color: white;
     background-color: black;
     border: none;
     border-radius: 25px;
 }
-

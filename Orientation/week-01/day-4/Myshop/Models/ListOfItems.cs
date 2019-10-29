@@ -18,6 +18,29 @@ namespace Myshop.Models
             listOfItems.Add(new ShopItem("T-shirt", "Blue with corgi on bike", 300, 1));
             return listOfItems;
         }
+
+        public static List<ShopItem> SortedBySwitch()
+        {
+           var list = GetItems();
+            switch (/*input link/button*/)
+            {
+                case 1:
+                    List<ShopItem> onlyAvailable = list.Where(i => i.StockQuantity > 0).ToList();
+                    return onlyAvailable;
+                case 2:
+                    List<ShopItem> cheapestFirst = list.OrderBy(i => i.Price).ToList();
+                    return cheapestFirst;
+                case 3:
+                    List<ShopItem> containsNike = list.Where(i => i.Description.Contains("nike")).ToList();
+                    return containsNike;
+                case 4:
+                    List<ShopItem> mostExpensiveAvailable = list.Where(i => i.StockQuantity > 0).OrderByDescending(item => item).Take(1).ToList();
+                    return mostExpensiveAvailable;
+                case 5: // search
+
+                    return list;
+            }
+        }
         
 
     }

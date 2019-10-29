@@ -1,0 +1,74 @@
+﻿@model List<BankOfSimba.Models.BankAccount>
+
+@{string currency = "Zbr";}
+
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Animal Type</th>
+        <th>Is King?</th>
+        <th>Index</th>
+        <th>Status</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        @if (item.IsKing && item.IsGood)
+        {
+            <tr>
+                <td class="king">@item.Name</td>
+                <td class="king">@item.Balance.ToString("0.00") @currency</td>
+                <td class="king">@item.AnimalType</td>
+                <td class="king">@Html.Raw("<em>YES</em>")</td>
+                <td class="king">@Model.IndexOf(item)</td>
+                <td class="king">Good One</td>
+            </tr>
+        }
+        else if (!item.IsGood)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Balance.ToString("0.00") @currency</td>
+                <td>@item.AnimalType</td>
+                <td>Nope</td>
+                <td>@Model.IndexOf(item)</td>
+                <td>Bad Guy</td>
+            </tr>
+        }
+        else 
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Balance.ToString("0.00") @currency</td>
+                <td>@item.AnimalType</td>
+                <td>Nope</td>
+                <td>@Model.IndexOf(item)</td>
+                <td>Good One</td>
+            </tr>
+        }
+     }
+</table>
+<form action="bankaccount/create" method="post">
+
+    <label>Name:<input type="text" name="Name" placeholder="Type name.." value="" /></label>
+
+    <label>Balance:<input type="text" name="Balance" placeholder="Type balance.." value="" /></label>
+
+    <label>Animal type:<input type="text" name="AnimalType" placeholder="Type animal type.." value="" /></label>
+
+    <input type="checkbox" name="IsKing" value="true" id="isKing" />
+    <label for="isKing">Is king?</label>
+
+    <input type="checkbox" name="IsGood" value="true" id="isGood" />
+    <label for="isGood">Is good?</label>
+
+    <button type="submit">Submit</button>
+</form>
+
+
+
+
