@@ -1,0 +1,28 @@
+﻿@using HelloDI.Models
+
+@model EmailValidation
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+        <style>
+            .true {
+                color: forestgreen;
+            }
+            .false {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        @if (Model.IsValid)
+        {
+            <p class="true">@Model.Email is valid!!</p>
+        }
+        else
+	    {
+            <p class="false">@Model.Email is not valid!!</p> 
+	    }
+    </body>
+    </html>
+
