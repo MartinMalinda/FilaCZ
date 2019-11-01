@@ -1,0 +1,20 @@
+﻿@using FoxClub.Models
+
+@model Fox
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Fox Club</title>
+</head>
+<body>
+
+    <img src="~/pictures/greenfox.png" alt="Green Fox">
+    <p>This is @Model.Name and currently lives on @Model.Food and @Model.Drink</p>
+
+    <h1>Known tricks:</h1>
+    @foreach (var trick in Model.Tricks)
+    {
+        <a>@trick</a>
+    }
+</body>
+</html>
